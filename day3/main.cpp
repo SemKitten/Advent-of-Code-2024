@@ -16,8 +16,8 @@ int main(int argc, char** argv) {
     std::string input;
     std::string temp;
     std::regex pattern("(?:mul\\((\\d+),(\\d+)\\)|do\\(\\)|don't\\(\\))");
-    long parte1 = 0;
-    long parte2 = 0;
+    long somatorio_multiplicacoes = 0;
+    long somatorio_do_multiplicacoes = 0;
     long deveria_adicionar = 1;
 
     while(std::getline(inputFile, temp)) {
@@ -35,8 +35,8 @@ int main(int argc, char** argv) {
             long a, b;
             a = std::stoi(match[1].str());
             b = std::stoi(match[2].str());
-            parte1 += a * b;
-            parte2 += a * b * deveria_adicionar;
+            somatorio_multiplicacoes += a * b;
+            somatorio_do_multiplicacoes += a * b * deveria_adicionar;
         } else {
             if (buffer == "do()") {
                 deveria_adicionar = 1;
@@ -46,8 +46,8 @@ int main(int argc, char** argv) {
         }
     }
 
-    std::cout << "Somatorio das multiplicacoes: " << parte1 << "\n";
-    std::cout << "Somatorio das multiplicacoes levando em conta do e dont: " << parte2 << "\n";
+    std::cout << "Somatorio das multiplicacoes: " << somatorio_multiplicacoes << "\n";
+    std::cout << "Somatorio das multiplicacoes levando em conta do e dont: " << somatorio_do_multiplicacoes << "\n";
     inputFile.close();
     return 0;
 }
