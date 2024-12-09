@@ -5,6 +5,8 @@
 #include <string>
 #include <regex>
 
+/*Logic was analyzed and developed based on someone else's code.*/
+
 int main(int argc, char** argv) {
 
     std::ifstream inputFile("input.txt");
