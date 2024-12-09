@@ -5,6 +5,8 @@
 #include <string>
 #include <regex>
 
+/*Logic was analyzed and developed based on someone else's code.*/
+
 int d_x[8] = { 0, 0, 1, -1, 1, -1, -1, 1 };
 int d_y[8] = { 1, -1, 0, 0, 1, -1, 1, -1 };
 
